@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import FriendList from './components/FriendList'
 import './App.css';
+import Loginpage from './components/loginpage'
+import {Route, } from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <div>
+                    <Route path = "/login" component = {Loginpage} />
+
+                </div>
+                <div>
+                    <PrivateRoute path = "/friendlist" component = {FriendList} />
+
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
